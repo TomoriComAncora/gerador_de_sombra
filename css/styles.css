@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+body {
+  background-color: #ccd5ae;
+}
+
 h2 {
   margin-bottom: 1.5rem;
   text-align: center;
@@ -26,7 +30,7 @@ h2 {
   display: flex;
   padding-bottom: 1.2rem;
   margin-bottom: 1.2rem;
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px dashed #444;
 }
 
 .form-control label {
@@ -35,8 +39,66 @@ h2 {
   color: #555;
 }
 
-.range-input{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+.range-input {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* tirar a barrinha do slidebar(range) */
+.range-input input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 0.7rem;
+  background-color: #d4a373;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* tirar a bolinha do slidebar(range) */
+.range-input input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  background-color: #faedcd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.reference-input {
+  display: flex;
+  align-items: center;
+}
+
+.reference-input p {
+  margin-left: 4px;
+}
+
+.reference-input input[type="number"] {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin-left: 1rem;
+}
+
+/* preview */
+#box {
+  width: 100%;
+  height: 300px;
+  background-color: #faedcd;
+}
+
+/* área de geração */
+#generated-rule{
+  text-align: center;
+}
+
+#generated-rule p{
+  margin-bottom: .5rem;
+}
+
+#rule-area{
+  background-color: #e9edc9;
 }
