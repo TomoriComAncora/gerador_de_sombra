@@ -43,4 +43,21 @@ const previewBox = document.querySelector("#box");
 const rule = document.querySelector("#rule span");
 const webkitRule = document.querySelector("#webkit-rule span");
 const mozRule = document.querySelector("#moz-rule span");
+
+const boxShadow = new BoxShadowGenerator(
+  horizontal,
+  horizontalInput,
+  vertical,
+  verticalInput,
+  blur,
+  blurInput,
+  spread,
+  spreadInput,
+  previewBox,
+  rule,
+  webkitRule,
+  mozRule
+);
+
+console.log(boxShadow);
 // Eventos
