@@ -6,6 +6,7 @@
 
 body {
   background-color: #ccd5ae;
+  margin-bottom: 100px;
 }
 
 h2 {
@@ -101,4 +102,9 @@ h2 {
 
 #rule-area{
   background-color: #e9edc9;
+  max-width: 1100px;
+  margin: 0 auto;
+  border: 1px solid #d4a373;
+  border-radius: 5px;
+  padding: .5rem;
 }
