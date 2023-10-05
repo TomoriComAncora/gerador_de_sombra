@@ -79,6 +79,44 @@
             <p>px</p>
           </div>
         </form>
+        <form class="form-control">
+          <div class="range-input">
+            <label for="color">Cor da sombra:</label>
+            <input
+              type="color"
+              id="color"
+              name="color"
+              value="#000"
+            />
+          </div>
+          <div class="reference-input">
+            <input type="number" id="color-value" name="color-value" />
+          </div>
+        </form>
+        <form class="form-control">
+          <div class="range-input">
+            <label for="opacity">Opacidade:</label>
+            <input
+              type="range"
+              id="opacity"
+              name="opacity"
+              min="0"
+              max="1"
+              value="1"
+              step="0.01"
+            />
+          </div>
+          <div class="reference-input">
+            <input type="number" id="opacity-value" name="opacity-value" />
+            <p>px</p>
+          </div>
+        </form>
+        <form class="form-control">
+          <div class="range-input">
+            <label for="opacity">Sombra Interna? (Insert)</label>
+            <input type="checkbox" id="insert" name="insert">
+          </div>
+        </form>
       </div>
       <div id="preview">
         <h2>preview do efeito gerado:</h2>

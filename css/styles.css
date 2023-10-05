@@ -88,6 +88,11 @@ h2 {
   -webkit-appearance: none;
 }
 
+/* novas funcionalidades */
+#color-value{
+  min-width: 100px;
+}
+
 /* preview */
 #box {
   width: 100%;
