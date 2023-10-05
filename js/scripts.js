@@ -26,6 +26,27 @@ class BoxShadowGenerator {
     this.webkitRule = webkitRule;
     this.mozRule = mozRule;
   }
+
+  incialize() {
+    this.horizontalInput.value = this.horizontal.value;
+    this.verticalInput.value = this.vertical.value;
+    this.blurInput.value = this.blur.value;
+    this.spreadInput.value = this.spread.value;
+
+    this.apply();
+    this.showRule();
+  }
+
+  apply() {
+    this.previewBox.style.boxShadow = `${this.horizontalInput.value}px ${this.verticalInput.value}px ${this.blurInput.value}px ${this.spreadInput.value}px #000`;
+    this.currentRule = this.previewBox.style.boxShadow;
+  }
+
+  showRule() {
+    this.rule.innerText = this.currentRule;
+    this.webkitRule.innerText = this.currentRule;
+    this.mozRule.innerText = this.currentRule;
+  }
 }
 
 // seleção de elementos
@@ -44,6 +65,7 @@ const rule = document.querySelector("#rule span");
 const webkitRule = document.querySelector("#webkit-rule span");
 const mozRule = document.querySelector("#moz-rule span");
 
+// cada item da classe referência a um item do DOM
 const boxShadow = new BoxShadowGenerator(
   horizontal,
   horizontalInput,
@@ -60,4 +82,5 @@ const boxShadow = new BoxShadowGenerator(
 );
 
 console.log(boxShadow);
+boxShadow.incialize();
 // Eventos
