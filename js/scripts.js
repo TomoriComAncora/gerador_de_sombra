@@ -62,7 +62,6 @@ class BoxShadowGenerator {
       case "spread":
         this.spreadInput.value = value;
         break;
-      
     }
     this.apply();
     this.showRule();
@@ -78,6 +77,12 @@ const blur = document.querySelector("#blur");
 const blurInput = document.querySelector("#blur-value");
 const spread = document.querySelector("#spread");
 const spreadInput = document.querySelector("#spread-value");
+// novos inputs
+const color = document.querySelector("#color");
+const colorInput = document.querySelector("#color-value");
+const opacity = document.querySelector("#opacity");
+const opacityInput = document.querySelector("#opacity-value");
+const inset = document.querySelector("#inset");
 
 const previewBox = document.querySelector("#box");
 
