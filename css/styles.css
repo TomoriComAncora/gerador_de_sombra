@@ -6,7 +6,7 @@
 
 body {
   background-color: #ccd5ae;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 }
 
 h2 {
@@ -89,11 +89,15 @@ h2 {
 }
 
 /* novas funcionalidades */
-#color-value{
+#color-value {
   min-width: 100px;
 }
 
-#inset
+#inset {
+  align-self: flex-start;
+  width: 20px;
+  height: 20px;
+}
 
 /* preview */
 #box {
@@ -103,19 +107,48 @@ h2 {
 }
 
 /* área de geração */
-#generated-rule{
+#generated-rule {
   text-align: center;
 }
 
-#generated-rule p{
-  margin-bottom: .5rem;
+#generated-rule p {
+  margin-bottom: 0.5rem;
 }
 
-#rule-area{
+#rule-area {
   background-color: #e9edc9;
   max-width: 1100px;
   margin: 0 auto;
   border: 1px solid #d4a373;
   border-radius: 5px;
-  padding: .5rem;
+  padding: 0.5rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#rule-area:hover {
+  background-color: #f5ebe0;
+}
+
+#copy-information {
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* responsivo */
+@media (max-width: 450px) {
+  #box-shadow-generator {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #generated-rule {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 1250px) {
+  #generated-rule {
+    padding: 1rem;
+  }
 }
