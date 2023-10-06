@@ -142,7 +142,14 @@ h2 {
     flex-direction: column;
   }
 
+  #box{
+    width: 80%;
+    height: 200px;
+    margin: 0 auto;
+  }
+
   #generated-rule {
+    margin-top: 4rem;
     padding: 1rem;
   }
 }
