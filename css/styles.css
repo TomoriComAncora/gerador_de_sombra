@@ -90,7 +90,9 @@ h2 {
 
 /* novas funcionalidades */
 #color-value {
-  min-width: 100px;
+  max-width: 100px;
+  text-align: center;
+  outline: none;
 }
 
 #inset {
