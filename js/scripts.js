@@ -8,6 +8,11 @@ class BoxShadowGenerator {
     blurInput,
     spread,
     spreadInput,
+    color,
+    colorInput,
+    opacity,
+    opacityInput,
+    inset,
     previewBox,
     rule,
     webkitRule,
@@ -21,6 +26,11 @@ class BoxShadowGenerator {
     this.blurInput = blurInput;
     this.spread = spread;
     this.spreadInput = spreadInput;
+    this.color = color;
+    this.colorInput = colorInput;
+    this.opacity = opacity;
+    this.opacityInput = opacityInput;
+    this.inset = inset;
     this.previewBox = previewBox;
     this.rule = rule;
     this.webkitRule = webkitRule;
@@ -32,14 +42,19 @@ class BoxShadowGenerator {
     this.verticalInput.value = this.vertical.value;
     this.blurInput.value = this.blur.value;
     this.spreadInput.value = this.spread.value;
+    this.colorInput.value = this.color.value;
 
     this.apply();
     this.showRule();
   }
 
   apply() {
-    this.previewBox.style.boxShadow = `${this.horizontalInput.value}px ${this.verticalInput.value}px ${this.blurInput.value}px ${this.spreadInput.value}px #000`;
-    this.currentRule = this.previewBox.style.boxShadow;
+    const rgbValue = this.hexToRgb(this.colorInput.value);
+    console.log(rgbValue);
+
+    const shadowRule = `${this.horizontalInput.value}px ${this.verticalInput.value}px ${this.blurInput.value}px ${this.spreadInput.value}px rgba(${rgbValue})`;
+    this.previewBox.style.boxShadow = shadowRule;
+    this.currentRule = shadowRule;
   }
 
   showRule() {
@@ -62,9 +77,18 @@ class BoxShadowGenerator {
       case "spread":
         this.spreadInput.value = value;
         break;
+      case "color":
+        this.colorInput.value = value;
+        break;
     }
     this.apply();
     this.showRule();
+  }
+
+  hexToRgb(hex) {
+    return `${("0x" + hex[1] + hex[2]) | 0}, ${("0x" + hex[3] + hex[4]) | 0}, ${
+      ("0x" + hex[5] + hex[6]) | 0
+    }`;
   }
 }
 
@@ -100,6 +124,11 @@ const boxShadow = new BoxShadowGenerator(
   blurInput,
   spread,
   spreadInput,
+  color,
+  colorInput,
+  opacity,
+  opacityInput,
+  inset,
   previewBox,
   rule,
   webkitRule,
@@ -131,4 +160,11 @@ spread.addEventListener("input", (e) => {
   const value = e.target.value;
 
   boxShadow.updateValue("spread", value);
+});
+
+// novos eventos
+color.addEventListener("input", (e) => {
+  const value = e.target.value;
+
+  boxShadow.updateValue("color", value);
 });
